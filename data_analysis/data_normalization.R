@@ -26,3 +26,15 @@ ggsave(
   height = 3, width = 3, units = 'in', dpi = 1200
 )
 
+#sample loading normalization
+target_mean_protein <- mean(colSums(protein_quantification |> select(cfz_1:DMSO_9)))
+norm_facs_protein <- target_mean_protein/colSums(protein_quantification |> select(cfz_1:DMSO_9))
+protein_sl <- tibble(sweep(protein_quantification |> select(cfz_1:DMSO_9), 2, norm_facs_protein, FUN = '*'))
+colnames(protein_sl) <- c(
+  'cfz_1_sl', 'cfz_2_sl', 'cfz_3_sl', 
+  'cfz_4H10_4_sl', 'cfz_4H10_5_sl', 'cfz_4H10_6_sl',
+  'DMSO_7_sl', 'DMSO_8_sl', 'DMSO_9_sl'
+)
+protein_quantification_raw_sl <- bind_cols(protein_quantification, protein_sl)
+write_xlsx(protein_quantification_raw_sl, path = 'data_source/data_normalization/protein_quantification_raw_sl.xlsx')
+
