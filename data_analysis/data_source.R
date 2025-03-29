@@ -18,10 +18,10 @@ protein_quantification_raw_sl_tmm <- read_xlsx('data_source/data_normalization/p
 
 ## differential analysis
 # cfz vs. cfz + 4h10
-cfz_vs_cfz_4h10_toptable_tb <- read_csv('data_source/differential_analysis/cfz_vs_cfz_4h10_toptable_tb.csv')
+cfz_vs_cfz_4h10_toptable_tb <- read_csv('data_source/differential_analysis/cfz_vs_cfz_4h10_toptable.csv')
 
 # cfz vs. DMSO
-cfz_vs_DMSO_toptable_tb <- read_csv('data_source/differential_analysis/cfz_vs_DMSO_toptable_tb.csv')
+cfz_vs_DMSO_toptable_tb <- read_csv('data_source/differential_analysis/cfz_vs_DMSO_toptable.csv')
 
 # cfz + 4h10 vs. DMSO
-cfz_4h10_vs_DMSO_toptable_tb <- read_csv('data_source/differential_analysis/cfz_4h10_vs_DMSO_toptable_tb.csv')
+cfz_4h10_vs_DMSO_toptable_tb <- read_csv('data_source/differential_analysis/cfz_4h10_vs_DMSO_toptable.csv')
